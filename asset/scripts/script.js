@@ -88,7 +88,9 @@ const loadProducts = async() => {
 function removeItem(spanElement) {
     var value = spanElement.getAttribute("product_id");
     axios.delete(`https://autobillingdesk.onrender.com/product/${value}`)
-    location.reload();
+    setTimeout(function() {
+        location.reload();
+    }, 2000); // delay for 2 seconds
 }
 
 var checkout = async() => {
